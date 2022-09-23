@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Options from "./Components/Options/Options";
+import Statistics from "./Components/Statistics/Statistics";
+import { FeedBackSection } from "./Components/FeedBackSection/FeedBackSection.styled";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  static defaultProps = {
+    initialValue: 0,
+  };
+
+  static propTypes = {
+    //
+  };
+
+  state = {
+    good: this.props.initialValue,
+    neutral: this.props.initialValue,
+    bad: this.props.initialValue,
+  };
+
+  firstHandleIncrement = () => {
+    this.setState((prevState) => ({ good: prevState.good + 1 }));
+  };
+  secondHandleIncrement = () => {
+    this.setState((prevState) => ({ neutral: prevState.neutral + 1 }));
+  };
+  thirdHandleIncrement = () => {
+    this.setState((prevState) => ({ bad: prevState.bad + 1 }));
+  };
+
+  render() {
+    return (
+      <FeedBackSection>
+        <Options
+          firstIncrement={this.firstHandleIncrement}
+          secondIncrement={this.secondHandleIncrement}
+          thirdIncrement={this.thirdHandleIncrement}
+        />
+        <Statistics
+          good={this.state.good}
+          neutral={this.state.neutral}
+          bad={this.state.bad}
+        />
+      </FeedBackSection>
+    );
+  }
 }
 
 export default App;
