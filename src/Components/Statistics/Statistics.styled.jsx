@@ -1,19 +1,17 @@
 import styled from "@emotion/styled";
 
-export const StatisticTitle = styled.h2`
-  font-size: 35px;
+export const List = styled.ul`
+  list-style: none;
 `;
 
-export const Description = styled.p`
-  margin: 5px;
-  font-size: 25px;
-  font-weight: 500;
+export const Item = styled.li`
+  font-size: 20px;
+  font-weight: bold;
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
 `;
 
 export const Value = styled.span`
-  margin-right: 10px;
-  margin-left: 10px;
-  font-size: 35px;
-  font-family: monospace;
-  font-weight: 500;
+  font-weight: normal;
 `;
