@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Options from "./Components/Options/Options";
-import Statistics from "./Components/Statistics/Statistics";
-import FeedBackSection from "./Components/FeedBackSection/FeedbackSection";
-import Container from "./Components/Container/Container";
-import Notification from "./Components/Notification/Notification";
+import Options from "./Components/Options";
+import Statistics from "./Components/Statistics";
+import FeedBackSection from "./Components/FeedBackSection";
+import Container from "./Components/Container";
+import Notification from "./Components/Notification";
 
 class App extends Component {
   static defaultProps = {
